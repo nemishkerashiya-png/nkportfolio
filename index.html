@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image" href="favnew.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naimish Portfolio</title>
+    <meta name="description"
+        content="Personal portfolio of Naimish Kerashiya, 2nd-year IT undergraduate student at Lokbharati University. Showcase of modern web development, UI/UX designs, and 3D web experiences.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor-dot" id="cursor-dot"></div>
+    <div class="custom-cursor-outline" id="cursor-outline"></div>
+
+    <!-- 3D Canvas Background -->
+    <div class="canvas-container">
+        <canvas id="bg-canvas"></canvas>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-bar"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <div class="nav-container">
+            <a href="#" class="logo" id="nav-logo">
+                <span class="logo-bracket">&lt;</span>N<span class="logo-accent">K</span><span
+                    class="logo-bracket">/&gt;</span>
+            </a>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+                    <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                    <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+                    <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+                    <li><a href="#university" class="nav-link" data-section="university">University</a></li>
+                    <li><a href="#internship" class="nav-link" data-section="internship">Internship</a></li>
+                    <li><a href="#creative" class="nav-link" data-section="creative">Creative Corner</a></li>
+                    <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+                    <li><a href="resume.pdf" download="Naimish_Kerashiya_Resume.pdf"
+                            class="nav-link nav-resume-btn hover-trigger"><i class="fa-solid fa-download"></i>
+                            Resume</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Modal -->
+    <div class="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="#home" class="mobile-nav-link" data-section="home">Home</a></li>
+            <li><a href="#about" class="mobile-nav-link" data-section="about">About</a></li>
+            <li><a href="#skills" class="mobile-nav-link" data-section="skills">Skills</a></li>
+            <li><a href="#projects" class="mobile-nav-link" data-section="projects">Projects</a></li>
+            <li><a href="#university" class="mobile-nav-link" data-section="university">University</a></li>
+            <li><a href="#internship" class="mobile-nav-link" data-section="internship">Internship</a></li>
+            <li><a href="#creative" class="mobile-nav-link" data-section="creative">Creative Corner</a></li>
+            <li><a href="#contact" class="mobile-nav-link" data-section="contact">Contact</a></li>
+            <li><a href="resume.pdf" download="Naimish_Kerashiya_Resume.pdf" class="mobile-resume-btn hover-trigger"><i
+                        class="fa-solid fa-download"></i> Resume</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- HERO SECTION -->
+        <section id="home" class="hero-section active-section">
+            <div class="hero-content">
+                <div class="hero-badge hover-trigger">
+                    <span class="badge-dot"></span>
+                    <span class="badge-text">Available for Opportunities</span>
+                </div>
+                <h2 class="hero-subtitle"> I'M</h2>
+                <h1 class="hero-title">
+                    <span class="gradient-text">NAIMISH</span><br>
+                    <span class="gradient-text-alt">KERASHIYA</span>
+                </h1>
+                <p class="hero-description">
+                    a <span>B.Voc IT student</span> at Lokbharati University. I am passionate about
+                    technology, web development, and creating innovative digital solutions. I enjoy learning new
+                    technologies and transforming ideas into functional and user-friendly projects. My goal is to
+                    continuously improve my skills and build a successful career in the IT industry.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary hover-trigger">
+                        <span>View Work</span>
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary hover-trigger">
+                        <span>Let's Talk</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </a>
+                    <a href="resume.pdf" download="Naimish_Kerashiya_Resume.pdf" class="btn btn-resume hover-trigger">
+                        <span>Download CV</span>
+                        <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-3d-card hover-trigger" id="hero-card">
+                    <div class="card-inner">
+                        <div class="card-code">
+                            <span class="code-keyword">IT</span> <span class="code-variable">Student</span> = {
+                            <br>&nbsp;&nbsp;name: <span class="code-string">'Naimish Kerashiya'</span>,
+                            <br>&nbsp;&nbsp;role: <span class="code-string">'IT Student'</span>,
+                            <br>&nbsp;&nbsp;year: <span class="code-number">2</span>,
+                            <br>&nbsp;&nbsp;college: <span class="code-string">'Lokbharati University'</span>,
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span class="mouse-icon">
+                    <span class="wheel"></span>
+                </span>
+                <span class="scroll-text">Scroll Down</span>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section-container">
+            <div class="section-header">
+
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-left">
+                    <div class="tilt-card-wrapper hover-trigger" id="about-card">
+                        <div class="avatar-card">
+                            <div class="avatar-glow"></div>
+                            <div class="avatar-frame">
+                                <img src="image.png" alt="Naimish Kerashiya" class="avatar-photo">
+                            </div>
+                            <h3>Naimish Kerashiya</h3>
+                            <p>Information Technology Student</p>
+                            <div class="card-socials">
+                                <a href="https://github.com/ahirnk052-source" class="social-icon hover-trigger"
+                                    aria-label="Github"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/naimish-kerashiya-a83061382?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                                    class="social-icon hover-trigger" aria-label="LinkedIn"><i
+                                        class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="#" class="social-icon hover-trigger" aria-label="Twitter"><i
+                                        class="fa-brands fa-x-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-right">
+                    <h3 class="about-subtitle">Transforming ideas into interactive reality</h3>
+                    <p class="about-text">
+                        As a 2nd year IT student, I focus heavily on bridging the gap between design and implementation.
+                        I am deeply interested in visual web interactions, standard layouts, and applying 3D rendering
+                        elements to build websites that feel alive.
+                    </p>
+                    <p class="about-text">
+                        My studies at Lokbharati University have equipped me with core computer science knowledge, and I
+                        have dedicated myself to mastering frontend frameworks, responsive UI architecture, and 3D web
+                        techniques.
+                    </p>
+                    <div class="stats-container">
+                        <div class="stat-box hover-trigger">
+                            <span class="stat-number">2nd</span>
+                            <span class="stat-label">Year IT Student</span>
+                        </div>
+                        <div class="stat-box hover-trigger">
+                            <span class="stat-number"></span>
+                            <span class="stat-label">Projects Built</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="section-container">
+            <div class="section-header">
+
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid skills-grid-2col">
+                <!-- Skill Category 1 -->
+                <div class="skill-category-card tilt-card hover-trigger" style="--accent-color: #f472b6;">
+                    <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Frontend Core</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>HTML</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-progress-track">
+                                <div class="skill-progress-fill" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>CSS / Modern Layouts</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="skill-progress-track">
+                                <div class="skill-progress-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>JavaScript</span>
+                                <span>30%</span>
+                            </div>
+                            <div class="skill-progress-track">
+                                <div class="skill-progress-fill" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Category 2 -->
+                <div class="skill-category-card tilt-card hover-trigger" style="--accent-color: #34d399;">
+                    <div class="skill-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <h3>Tools &amp; Databases</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Git &amp; GitHub</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-progress-track">
+                                <div class="skill-progress-fill" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>SQL / Relational Databases</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="skill-progress-track">
+                                <div class="skill-progress-fill" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="section-container">
+            <div class="section-header">
+
+                <h2 class="section-title">Selected Projects</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="projects-grid projects-single">
+                <!-- Project 1 -->
+                <div class="project-card tilt-card hover-trigger" data-category="web" data-project-id="1">
+                    <div class="project-image-wrapper">
+                        <div class="project-glow"></div>
+                        <img src="Screenshot 2026-07-30 150901.png" alt="Lokbharti University Website">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag-item">Luri Site</span>
+                        <h3>Lokbharti University Website</h3>
+                        <p>A modern and responsive frontend website developed for Lokbharti University, designed to
+                            provide students, faculty, and visitors with easy access to academic information,
+                            departments, events, admissions, and campus resources.
+                        </p>
+                        <a href="https://ahirnk052-source.github.io/LURI-site/" class="project-link-icon"
+                            aria-label="View project"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIFE AT LOKBHARATI UNIVERSITY SECTION -->
+        <section id="university" class="section-container">
+            <div class="section-header">
+
+                <h2 class="section-title">Life at Lokbharati University</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="uni-intro">
+                <p class="uni-intro-text">
+                    Being a student at <span class="highlight">Lokbharati University</span> has been a transformative
+                    journey — blending rigorous academics with creative exploration, teamwork, and personal growth
+                    in the heart of Gujarat.
+                </p>
+            </div>
+
+            <!-- Highlight Cards Grid -->
+            <div class="uni-grid">
+                <div class="uni-card hover-trigger" style="--uni-accent: #f472b6;">
+                    <div class="uni-card-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3>Academics</h3>
+                    <p>Pursuing B.Voc in Information Technology with a focus on core CS fundamentals, data structures,
+                        and modern web technologies. Consistently aiming for academic excellence.</p>
+                    <div class="uni-card-tag">2nd Year · IT Department</div>
+                </div>
+
+                <div class="uni-card hover-trigger" style="--uni-accent: #818cf8;">
+                    <div class="uni-card-icon">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3>Lab &amp; Projects</h3>
+                    <p>Hands-on experience in college labs working on programming assignments, database management
+                        systems, and building real-world mini projects that bridge theory and practice.</p>
+                    <div class="uni-card-tag">Practical Learning</div>
+                </div>
+
+                <div class="uni-card hover-trigger" style="--uni-accent: #34d399;">
+                    <div class="uni-card-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3>Peer Network</h3>
+                    <p>Collaborating with fellow IT students on group projects and discussions, fostering a culture of
+                        knowledge-sharing and mutual growth within the department.</p>
+                    <div class="uni-card-tag">Teamwork &amp; Collaboration</div>
+                </div>
+
+                <div class="uni-card hover-trigger" style="--uni-accent: #fb923c;">
+                    <div class="uni-card-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3>Bhavnagar, Gujarat</h3>
+                    <p>Located in the coastal city of Bhavnagar, the campus offers a calm and focused environment that
+                        fuels productivity, creativity, and a deep connection to local culture.</p>
+                    <div class="uni-card-tag">Bhavnagar · Gujarat · India</div>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="uni-timeline-wrapper">
+                <h3 class="uni-timeline-title">My Journey So Far</h3>
+                <div class="uni-timeline">
+                    <div class="uni-timeline-item">
+                        <div class="uni-timeline-dot"></div>
+                        <div class="uni-timeline-content hover-trigger">
+                            <span class="uni-timeline-date">2022</span>
+                            <h4>10th Board</h4>
+                            <p>"Completed 10th Standard from Gyanmanjari School, building a strong foundation in
+                                academics, discipline, and personal growth.".</p>
+                        </div>
+                    </div>
+                    <div class="uni-timeline-item">
+                        <div class="uni-timeline-dot"></div>
+                        <div class="uni-timeline-content hover-trigger">
+                            <span class="uni-timeline-date">2024</span>
+                            <h4>12th Board</h4>
+                            <p>"Completed 12th Standard with a focus on academic excellence, personal growth, and
+                                developing skills for future opportunities in technology.".</p>
+                        </div>
+                    </div>
+                    <div class="uni-timeline-item">
+                        <div class="uni-timeline-dot active-dot"></div>
+                        <div class="uni-timeline-content hover-trigger">
+                            <span class="uni-timeline-date">2025 — </span>
+                            <h4>Join Lokbharti University</h4>
+                            <p>"Currently pursuing a Bachelor of Vocation (B.Voc) in Information Technology at Lokbharti
+                                University, developing practical skills in web development, programming, database
+                                management, and modern IT technologies."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERNSHIP SECTION -->
+        <section id="internship" class="section-container">
+            <div class="section-header">
+
+                <h2 class="section-title">Internship &amp; Experience</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="internship-grid">
+                <div class="internship-left">
+                    <div class="internship-status-card hover-trigger">
+                        <div class="status-badge">
+                            <span class="status-dot"></span>
+                            <span>Open for Opportunities</span>
+                        </div>
+                        <h3>Seeking an IT Internship</h3>
+                        <p class="internship-pitch">
+                            As a dedicated B.Voc IT student, I am eager to apply my technical skills to real-world
+                            challenges. I am looking for a challenging internship where I can learn, collaborate, and
+                            add value to engineering teams.
+                        </p>
+                        <div class="target-roles">
+                            <div class="role-item">
+                                <i class="fa-solid fa-laptop-code"></i>
+                                <div>
+                                    <h4>Frontend Web Intern</h4>
+                                    <span>HTML · CSS · JavaScript</span>
+                                </div>
+                            </div>
+                            <div class="role-item">
+                                <i class="fa-solid fa-database"></i>
+                                <div>
+                                    <h4>Database &amp; Backend Intern</h4>
+                                    <span>SQL · Relational Databases ·</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="internship-right">
+                    <div class="readiness-card tilt-card hover-trigger">
+                        <h3>Experience</h3>
+                        <div class="readiness-items">
+                            <div class="readiness-item">
+
+                                <div class="readiness-content">
+                                    <h4>EsJay IT Solutions Pvt Ltd, Rajkot</h4>
+                                    <p>Developed responsive web pages using HTML, CSS, and JavaScript.</p>
+                                </div>
+                            </div>
+                            <div class="readiness-item">
+
+                                <div class="readiness-content">
+                                    <h4>Gujrat Vidhyapeeth , Ahemdabad</h4>
+                                    <p>Learned Python programming fundamentals and object-oriented programming (OOP)</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CREATIVE CORNER SECTION -->
+        <section id="creative" class="section-container">
+            <div class="section-header">
+                <span class="section-tag">EXPLORATIONS &amp; WORKSHOPS</span>
+                <h2 class="section-title">Creative Corner</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="creative-content-wrapper">
+                <!-- Video Showcase -->
+                <div class="creative-video-card hover-trigger">
+                    <div class="video-card-header">
+                        <div class="video-badge">
+                            <i class="fa-solid fa-play"></i>
+                            <span>Group 8 Showcase</span>
+                        </div>
+                        <h3 class="video-card-title">Group 8 Innovation &amp; Demonstration</h3>
+                        <p class="video-card-desc">Practical demonstration video showcasing rural innovation, machine operation, and hands-on project work by Group 8.</p>
+                    </div>
+                    <div class="video-player-container">
+                        <video class="creative-video-player" controls playsinline preload="metadata">
+                            <source src="Group_no._8-compressed.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Model Proposal PDF -->
+                <div class="creative-report-card creative-proposal-card hover-trigger">
+                    <div class="report-card-header">
+                        <div class="report-header-text">
+                            <div class="report-badge proposal-badge">
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>Model Proposal</span>
+                            </div>
+                            <h3 class="report-card-title">Innovation Model Project Proposal</h3>
+                            <p class="report-card-desc">Detailed project proposal document outlining conceptual design, technical specifications, and project plan.</p>
+                        </div>
+                        <div class="report-actions">
+                            <a href="Copy%20of%20Mode.._261014230414.pdf" target="_blank" class="btn btn-proposal-view hover-trigger">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <span>View Proposal</span>
+                            </a>
+                            <a href="Copy%20of%20Mode.._261014230414.pdf" download="Innovation_Model_Proposal.pdf" class="btn btn-report-download hover-trigger">
+                                <i class="fa-solid fa-download"></i>
+                                <span>Download</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="report-preview-container">
+                        <object data="Copy%20of%20Mode.._261014230414.pdf" type="application/pdf" class="creative-pdf-viewer">
+                            <div class="pdf-fallback-content">
+                                <i class="fa-solid fa-file-pdf pdf-fallback-icon"></i>
+                                <p>PDF preview is not supported directly on this browser. Click below to view or download.</p>
+                                <a href="Copy%20of%20Mode.._261014230414.pdf" target="_blank" class="btn btn-proposal-view hover-trigger">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Proposal
+                                </a>
+                            </div>
+                        </object>
+                    </div>
+                </div>
+
+                <!-- Rural Innovation Model Report PDF -->
+                <div class="creative-report-card hover-trigger">
+                    <div class="report-card-header">
+                        <div class="report-header-text">
+                            <div class="report-badge">
+                                <i class="fa-solid fa-file-pdf"></i>
+                                <span>Model Report</span>
+                            </div>
+                            <h3 class="report-card-title">Mounted Machine Rural Innovation Report</h3>
+                            <p class="report-card-desc">Comprehensive project documentation &amp; model research report on rural innovation and mounted machinery (Gujarati Edition).</p>
+                        </div>
+                        <div class="report-actions">
+                            <a href="Mounted_Mashine_Rural_Innovation_Report_Gujarati-20[1].pdf" target="_blank" class="btn btn-report-view hover-trigger">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <span>View PDF</span>
+                            </a>
+                            <a href="Mounted_Mashine_Rural_Innovation_Report_Gujarati-20[1].pdf" download="Mounted_Mashine_Rural_Innovation_Report_Gujarati.pdf" class="btn btn-report-download hover-trigger">
+                                <i class="fa-solid fa-download"></i>
+                                <span>Download</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="report-preview-container">
+                        <object data="Mounted_Mashine_Rural_Innovation_Report_Gujarati-20[1].pdf" type="application/pdf" class="creative-pdf-viewer">
+                            <div class="pdf-fallback-content">
+                                <i class="fa-solid fa-file-pdf pdf-fallback-icon"></i>
+                                <p>PDF preview is not supported directly on this browser. Click below to view or download.</p>
+                                <a href="Mounted_Mashine_Rural_Innovation_Report_Gujarati-20[1].pdf" target="_blank" class="btn btn-report-view hover-trigger">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Report
+                                </a>
+                            </div>
+                        </object>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section-container">
+            <div class="section-header">
+
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info-panel">
+                    <h3>Let's build something beautiful together</h3>
+                    <p class="contact-intro">I'm currently seeking internships, project collaborations, or developer
+                        roles. Reach out and I will reply as soon as possible.</p>
+
+                    <div class="info-items">
+                        <div class="info-item hover-trigger">
+                            <div class="info-item-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="info-item-content">
+                                <span>Email Me</span>
+                                <a href="mailto:kerashiyanemishv@gmail.com">kerashiyanemishv@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="info-item hover-trigger">
+                            <div class="info-item-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="info-item-content">
+                                <span>Education</span>
+                                <span>Lokbharati University, IT Department</span>
+                            </div>
+                        </div>
+                        <div class="info-item hover-trigger">
+                            <div class="info-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="info-item-content">
+                                <span>Location</span>
+                                <span>Bhavnagar, Gujarat, India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper tilt-card">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" placeholder="Naimish Kerashiya" required>
+                            <div class="input-glow-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="you@example.com" required>
+                            <div class="input-glow-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5"
+                                placeholder="Let's collaborate on something amazing..."></textarea>
+                            <div class="input-glow-line"></div>
+                        </div>
+                        <button type="submit" class="btn btn-submit">
+                            <span>Send Message</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Detail Modal -->
+    <div class="modal" id="project-modal">
+        <div class="modal-backdrop hover-trigger"></div>
+        <div class="modal-content tilt-card">
+            <button class="modal-close-btn hover-trigger" aria-label="Close modal"><i
+                    class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body">
+                <!-- Content dynamically injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Naimish Kerashiya.</p>
+    </footer>
+
+    <!-- Libraries (Three.js and GSAP via Cloudflare CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Code logic scripts -->
+    <script src="js/background3d.js"></script>
+    <script src="js/animations.js?v=3"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
